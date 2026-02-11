@@ -1,20 +1,25 @@
 #pip install matplotlib, pip install pylab (i terminalen)
 from pylab import *
+print("Her kan du lage en graf over halveringstid av isotoper. Skriv kun nummer i spørsmål markert med '[n]'.")
 
-print("Her kan du lage en graf over halveringstid av isotoper. Om du vil gjøre det ordentlig, ta med stor bokstav i spørsmålene med '[S]', og kun nummer i spørsmål markert med '[n]'.")
 #Variabler
-isotop = input("Hvilke isotop [S]? ")
-tidsenhet = input("Hva er tidsenheten (Dag, Minutter, År...[S])? ")
+i = input("Hvilke isotop? ")
+isotop = i.capitalize() #Capitalise gjør første bokstav til stor bokstav
+
+t = input("Hva er tidsenheten (Dag, Minutter, År...)? ")
+tidsenhet = t.capitalize()
+
 halv = float(input("Hva er halveringstiden [n]? "))
-mass_enhet = (input("Hvilke masseenhet (Atomkjerner, Kg...[S])? "))
+me = (input("Hvilke masseenhet (Atomkjerner, Kg...)? "))
+mass_enhet = me.capitalize()
+
 mass = float(input("Hvor mye masse [n]? "))
 tider = int(input("Hvor mange halveringstider har du lyst på [n]? "))
-N0 = mass
 
- 
+
 #Lager lister
 tid = [0]
-N = [N0]
+N = [mass]
 
 for i in range (1, tider+1):             
     tid.append(halv*i)    # Legger til halveringstid i listen tid (h_tid, 2*h_tid, 3*h_tid, ...)
