@@ -1,12 +1,16 @@
 #pip install matplotlib, pip install pylab (i terminalen)
 from pylab import *
 
+print("Her kan du lage en graf over halveringstid av isotoper. Om du vil gjøre det ordentlig, ta med stor bokstav i spørsmålene med '[S]', og kun nummer i spørsmål markert med '[n]'.")
 #Variabler
-isotop = input("Hvilke isotop? ")
-halv = float(input("Hva er halveringstidstallet (dag, min, år)? "))
-mass = float(input("Hvor mye masse? "))
+isotop = input("Hvilke isotop [S]? ")
+tidsenhet = input("Hva er tidsenheten (Dag, Minutter, År...[S])? ")
+halv = float(input("Hva er halveringstiden [n]? "))
+mass_enhet = (input("Hvilke masseenhet (Atomkjerner, Kg...[S])? "))
+mass = float(input("Hvor mye masse [n]? "))
+tider = int(input("Hvor mange halveringstider har du lyst på [n]? "))
 N0 = mass
-tider = int(input("Hvor mange halveringstider har du lyst på? "))
+
  
 #Lager lister
 tid = [0]
@@ -22,7 +26,8 @@ for i in range (1, tider+1):
     N.append(mass_igjen) 
 
 scatter(tid, N) # scatter() fungerer som plot(), men lager punkter i stedet for en sammenhengende linje
-xlabel("Tid") # Skriver på tittel langs førsteaksen
-ylabel("Antall atomkjerner av " + isotop) # Skriver på tittel langs andreaksen
+plot(tid, N)
+xlabel(tidsenhet) # Skriver på tittel langs førsteaksen
+ylabel(mass_enhet + " av " + isotop) # Skriver på tittel langs andreaksen
 grid() # Tegner inn et rutenett
 show() # Viser grafen
