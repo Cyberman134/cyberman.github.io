@@ -1,6 +1,6 @@
 #pip install matplotlib, pip install pylab (i terminalen)
 from pylab import *
-print("Her kan du lage en graf over halveringstid av isotoper. Skriv kun nummer i spørsmål markert med '[n]'.")
+print("Her kan du lage en graf over halveringstid av radioaktive isotoper. Skriv kun nummer i spørsmål markert med '[n]'.")
 
 #Variabler
 i = input("Hvilke isotop? ")
